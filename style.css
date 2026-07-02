@@ -1,12 +1,10 @@
 :root {
-    --cream: #faf6ec;
-    --cream-dark: #f0e6d2;
-    --azulejo: #2c5f7c;
-    --azulejo-dark: #1e4a63;
-    --lemon: #e8b93f;
-    --lemon-green: #93a83c;
-    --ink: #3a3128;
-    --seal: #b6552f;
+    --sand: #f8f1e1;
+    --sand-dark: #ecdfbf;
+    --ocean: #1f7a8c;
+    --ocean-dark: #145863;
+    --coral: #e8875f;
+    --ink: #33393a;
     --serif: 'Playfair Display', Georgia, serif;
     --script: 'Parisienne', cursive;
 }
@@ -19,7 +17,7 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: radial-gradient(circle at top, #e9e2cf 0%, #d9d0b8 100%);
+    background: linear-gradient(to bottom, #cdeef0 0%, #eef1d8 55%, #f0dcae 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,11 +26,13 @@ body {
     overflow-x: hidden;
 }
 
-/* ---------- Azulejo tile pattern ---------- */
+/* ---------- Wave pattern ---------- */
 .tile-border,
 .envelope-tile-strip {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Crect width='40' height='40' fill='%232c5f7c'/%3E%3Cpath d='M20 2 L38 20 L20 38 L2 20 Z' fill='none' stroke='%23faf6ec' stroke-width='1.5' opacity='0.8'/%3E%3Ccircle cx='20' cy='20' r='4' fill='%23e8b93f'/%3E%3Cpath d='M0 0 L40 40 M40 0 L0 40' stroke='%23faf6ec' stroke-width='0.5' opacity='0.3'/%3E%3C/svg%3E");
-    background-size: 40px 40px;
+    background-color: var(--sand-dark);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='22'%3E%3Cpath d='M0 14 Q20 4 40 14 T80 14' fill='none' stroke='%231f7a8c' stroke-width='2' opacity='0.8'/%3E%3Cpath d='M0 19 Q20 11 40 19 T80 19' fill='none' stroke='%23e8875f' stroke-width='1.5' opacity='0.6'/%3E%3C/svg%3E");
+    background-size: 80px 22px;
+    background-repeat: repeat-x;
 }
 
 .tile-border {
@@ -50,7 +50,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 24px;
-    background: radial-gradient(circle at center, #efe7d2 0%, #d9cdae 100%);
+    background: linear-gradient(to bottom, #cdeef0 0%, #eef1d8 60%, #f0dcae 100%);
     transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
@@ -82,8 +82,8 @@ body {
 .envelope-body {
     position: absolute;
     inset: 0;
-    background: var(--cream);
-    border: 1px solid var(--cream-dark);
+    background: var(--sand);
+    border: 1px solid var(--sand-dark);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
@@ -104,7 +104,7 @@ body {
     text-align: center;
     font-family: var(--script);
     font-size: 1.4rem;
-    color: var(--azulejo);
+    color: var(--ocean);
     margin: 0;
 }
 
@@ -114,7 +114,7 @@ body {
     left: 0;
     width: 100%;
     height: 55%;
-    background: linear-gradient(135deg, var(--azulejo) 0%, var(--azulejo-dark) 100%);
+    background: linear-gradient(135deg, var(--ocean) 0%, var(--ocean-dark) 100%);
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     transform-origin: top center;
     transition: transform 0.9s cubic-bezier(0.65, 0, 0.35, 1);
@@ -129,14 +129,14 @@ body {
     width: 46px;
     height: 46px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(circle at 35% 30%, #d1774c, var(--seal));
+    background: radial-gradient(circle at 35% 30%, #f0a978, var(--coral));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: var(--script);
-    color: var(--cream);
-    font-size: 1rem;
+    color: var(--sand);
+    font-size: 1.3rem;
     z-index: 4;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     transition: opacity 0.4s ease, transform 0.4s ease;
@@ -153,7 +153,7 @@ body {
 
 .envelope-hint {
     font-style: italic;
-    color: var(--azulejo-dark);
+    color: var(--ocean-dark);
     letter-spacing: 0.03em;
     text-align: center;
     animation: pulse 2.4s ease-in-out infinite;
@@ -187,7 +187,7 @@ body {
 }
 
 .page {
-    background: var(--cream);
+    background: var(--sand);
     display: flex;
     flex-direction: column;
     position: relative;
@@ -213,30 +213,28 @@ body {
 
 .page h2 {
     font-size: 1.4rem;
-    color: var(--azulejo-dark);
+    color: var(--ocean-dark);
     margin: 0 0 6px;
     position: relative;
 }
 
 .page h2::after {
-    content: "";
+    content: "∞";
     display: block;
-    width: 46px;
-    height: 2px;
-    background: var(--lemon);
-    margin: 8px auto 0;
+    font-family: var(--serif);
+    font-size: 1rem;
+    color: var(--coral);
+    margin: 6px auto 0;
 }
 
-.corner-branch {
+.corner-infinity {
     position: absolute;
-    top: 6px;
-    left: 6px;
-    width: 30px;
-    height: 30px;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 60'%3E%3Cpath d='M4 4 C20 8 30 20 34 40' fill='none' stroke='%2393a83c' stroke-width='2.5' stroke-linecap='round'/%3E%3Cellipse cx='14' cy='10' rx='7' ry='3.5' fill='%2393a83c' transform='rotate(-30 14 10)'/%3E%3Cellipse cx='26' cy='22' rx='7' ry='3.5' fill='%2393a83c' transform='rotate(15 26 22)'/%3E%3Ccircle cx='34' cy='40' r='6' fill='%23e8b93f'/%3E%3C/svg%3E");
-    background-size: contain;
-    background-repeat: no-repeat;
-    opacity: 0.85;
+    top: 10px;
+    left: 14px;
+    font-size: 1.3rem;
+    color: var(--ocean);
+    opacity: 0.3;
+    font-family: var(--serif);
 }
 
 .page-index {
@@ -245,7 +243,7 @@ body {
     right: 16px;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
-    color: var(--azulejo);
+    color: var(--ocean);
     opacity: 0.6;
 }
 
@@ -258,13 +256,13 @@ body {
     text-transform: uppercase;
     letter-spacing: 0.25em;
     font-size: 0.75rem;
-    color: var(--lemon-green);
+    color: var(--coral);
 }
 
 .names {
     font-family: var(--script);
     font-size: 2.6rem;
-    color: var(--azulejo-dark);
+    color: var(--ocean-dark);
     margin: 0;
     line-height: 1.1;
 }
@@ -272,7 +270,7 @@ body {
 .names span {
     display: block;
     font-size: 1.4rem;
-    color: var(--lemon);
+    color: var(--coral);
     font-family: var(--serif);
     font-style: italic;
     margin: 2px 0;
@@ -283,14 +281,28 @@ body {
     font-size: 0.95rem;
 }
 
-.lemon-ornament {
-    font-size: 1.6rem;
+.mascot-emblem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--ocean);
+}
+
+.mascot-emblem svg {
+    width: 40px;
+    height: 34px;
+}
+
+.mascot-emblem .infinity-mark {
+    font-size: 1.4rem;
+    color: var(--coral);
 }
 
 .big-date {
     font-family: var(--script);
     font-size: 1.8rem;
-    color: var(--azulejo);
+    color: var(--ocean);
 }
 
 .soft-note {
@@ -303,8 +315,8 @@ body {
 .coming-soon {
     display: inline-block;
     padding: 3px 14px;
-    border: 1px solid var(--lemon);
-    color: var(--lemon-green);
+    border: 1px solid var(--coral);
+    color: var(--coral);
     border-radius: 20px;
     font-size: 0.75rem;
     letter-spacing: 0.1em;
@@ -314,7 +326,7 @@ body {
 .dress-code {
     font-family: var(--script);
     font-size: 1.6rem;
-    color: var(--azulejo);
+    color: var(--ocean);
 }
 
 .farewell {
@@ -325,7 +337,7 @@ body {
 .signature {
     font-family: var(--script);
     font-size: 1.8rem;
-    color: var(--azulejo-dark);
+    color: var(--ocean-dark);
 }
 
 /* RSVP form */
@@ -352,7 +364,7 @@ body {
 
 #rsvp-form label {
     font-size: 0.68rem;
-    color: var(--azulejo-dark);
+    color: var(--ocean-dark);
     display: flex;
     flex-direction: column;
     gap: 2px;
@@ -364,8 +376,8 @@ body {
     font-family: var(--serif);
     font-size: 0.8rem;
     padding: 4px 6px;
-    border: 1px solid var(--cream-dark);
-    border-bottom: 1px solid var(--azulejo);
+    border: 1px solid var(--sand-dark);
+    border-bottom: 1px solid var(--ocean);
     background: #fffdf8;
     color: var(--ink);
     resize: none;
@@ -374,8 +386,8 @@ body {
 #rsvp-form button {
     margin-top: 4px;
     padding: 8px;
-    background: var(--azulejo);
-    color: var(--cream);
+    background: var(--ocean);
+    color: var(--sand);
     border: none;
     border-radius: 3px;
     font-family: var(--serif);
@@ -387,12 +399,12 @@ body {
 }
 
 #rsvp-form button:hover {
-    background: var(--azulejo-dark);
+    background: var(--ocean-dark);
 }
 
 #rsvp-thanks {
     font-style: italic;
-    color: var(--lemon-green);
+    color: var(--ocean);
     text-align: center;
 }
 
@@ -404,8 +416,8 @@ body {
 }
 
 #book-nav button {
-    background: var(--azulejo);
-    color: var(--cream);
+    background: var(--ocean);
+    color: var(--sand);
     border: none;
     width: 34px;
     height: 34px;
@@ -416,7 +428,7 @@ body {
 }
 
 #book-nav button:hover {
-    background: var(--azulejo-dark);
+    background: var(--ocean-dark);
 }
 
 #page-dots {
@@ -428,12 +440,12 @@ body {
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: var(--cream-dark);
+    background: var(--sand-dark);
     transition: background 0.3s ease;
 }
 
 #page-dots span.active {
-    background: var(--lemon);
+    background: var(--coral);
 }
 
 @media (max-width: 480px) {
