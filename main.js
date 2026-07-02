@@ -8,13 +8,13 @@ window.addEventListener('load', () => {
     const dotsContainer = document.getElementById('page-dots');
 
     const pageFlip = new St.PageFlip(book, {
-        width: 320,
-        height: 480,
+        width: 340,
+        height: 520,
         size: 'stretch',
-        minWidth: 260,
-        maxWidth: 420,
-        minHeight: 380,
-        maxHeight: 620,
+        minWidth: 280,
+        maxWidth: 460,
+        minHeight: 440,
+        maxHeight: 680,
         maxShadowOpacity: 0.4,
         showCover: true,
         mobileScrollSupport: false
