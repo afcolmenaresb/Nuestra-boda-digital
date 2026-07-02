@@ -1,11 +1,12 @@
-// main.js
-window.addEventListener('load', function () {
-    const pageFlip = new StPageFlip(document.getElementById('book'), {
-        width: 350,
-        height: 500,
+window.onload = function() {
+    const book = document.getElementById('book');
+    const pageFlip = new StPageFlip(book, {
+        width: 300,
+        height: 450,
         size: "fixed",
         showCover: true
     });
 
     pageFlip.loadFromHTML(document.querySelectorAll(".page"));
-});
+    book.style.display = 'block';
+};
