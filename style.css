@@ -1,0 +1,15 @@
+body { background-color: #f4f1ea; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+
+.page {
+    background-color: white;
+    padding: 40px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Georgia', serif;
+}
+
+.cover { background-color: #dcedc1; color: #555; }
+h1, h2 { color: #f9a825; } /* Color amarillo limón */
