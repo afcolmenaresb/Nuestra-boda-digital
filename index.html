@@ -4,27 +4,35 @@
     <meta charset="UTF-8">
     <title>Nuestra Boda</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Carga la librería -->
+    <!-- Cargamos la librería directamente -->
     <script src="https://cdn.jsdelivr.net/npm/stpageflip/dist/js/page-flip.browser.js"></script>
 </head>
 <body>
 
-    <div id="book" class="flip-book">
+    <div id="book">
+        <!-- Portada -->
         <div class="page cover">
-            <h1>¡Nos Casamos!</h1>
-            <p>Fátima & Andrés</p>
+            <div class="content">
+                <h1>¡Nos Casamos!</h1>
+                <p>Fátima y Andrés</p>
+            </div>
         </div>
+        <!-- Página 1 -->
         <div class="page">
-            <h2>Donde reina el amor</h2>
-            <p>Tenemos algo que celebrar contigo.</p>
+            <div class="content">
+                <h2>Donde reina el amor</h2>
+                <p>Tenemos algo que celebrar contigo.</p>
+            </div>
         </div>
+        <!-- Página 2 -->
         <div class="page">
-            <h2>19 de Mayo 2027</h2>
-            <p>Te esperamos a las 18:00 h.</p>
+            <div class="content">
+                <h2>19 de Mayo 2027</h2>
+                <p>Te esperamos a las 18:00 h.</p>
+            </div>
         </div>
     </div>
 
-    <!-- Movemos el script aquí al final para asegurar que el DOM existe -->
     <script src="main.js"></script>
 </body>
-</html> 
+</html>
