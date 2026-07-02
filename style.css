@@ -1,34 +1,31 @@
-/* Centrar el libro en la pantalla */
 body {
-    background-color: #f4f1ea;
+    margin: 0;
+    padding: 0;
+    background-color: #e5e5dc; /* Color base estilo mediterráneo */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    overflow: hidden;
 }
 
-/* El contenedor del libro debe ser invisible antes de que JS lo procese */
 #book {
-    display: none; 
+    display: none; /* Se oculta hasta que JS lo carga */
 }
 
-/* Estilo básico de cada página */
 .page {
-    background-color: white;
-    padding: 40px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    background: white;
+    padding: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    font-family: 'Georgia', serif;
+    border: 1px solid #ccc;
+    font-family: 'Playfair Display', serif;
 }
 
-.page.cover {
-    background-color: #dcedc1;
-    color: #555;
+.cover {
+    background-color: #d8e6c8; /* Verde limón suave */
+}
+
+.content {
+    text-align: center;
 }
