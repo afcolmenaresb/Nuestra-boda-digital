@@ -42,7 +42,7 @@ Pasos para activarlo (una sola vez):
 2. En **Build and deployment → Source**, seleccionar **GitHub Actions**.
 3. Hacer push a `main`; el workflow se encarga del resto.
 
-El sitio quedará publicado en `https://afcolmenaresb.github.io/invitacion-boda/` (configurado en `astro.config.mjs` mediante `site` y `base`).
+El sitio quedará publicado en `https://afcolmenaresb.github.io/Invitacion-boda/` (configurado en `astro.config.mjs` mediante `site` y `base`).
 
 ## Estado actual
 
